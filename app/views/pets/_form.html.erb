@@ -1,0 +1,57 @@
+<%= form_for(@pet) do |f| %>
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :petId %><br>
+    <%= f.number_field :petId %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :datebirth %><br>
+    <%= f.datetime_select :datebirth %>
+  </div>
+  <div class="field">
+    <%= f.label :specie_id %><br>
+    <%= f.text_field :specie_id %>
+  </div>
+  <div class="field">
+    <%= f.label :breed_id %><br>
+    <%= f.text_field :breed_id %>
+  </div>
+  <div class="field">
+    <%= f.label :otherDetails %><br>
+    <%= f.text_field :otherDetails %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
