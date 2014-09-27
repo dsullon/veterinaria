@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140927223354) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
+=======
+ActiveRecord::Schema.define(version: 20140927215928) do
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.float    "price"
+>>>>>>> 53a9e12f856ea459351aa36f64a6a3b533299cac
     t.datetime "created_at"
     t.datetime "updated_at"
   end
