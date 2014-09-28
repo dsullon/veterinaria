@@ -11,25 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140927224257) do
 
-  create_table "species", force: true do |t|
-=======
-ActiveRecord::Schema.define(version: 20140927223354) do
-
   create_table "breeds", force: true do |t|
->>>>>>> 8c338e74e49a00bd760f38870f34fd44c1a89d3e
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
   create_table "services", force: true do |t|
     t.string   "name"
     t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "species", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,5 +45,4 @@ ActiveRecord::Schema.define(version: 20140927223354) do
     t.datetime "updated_at"
   end
 
->>>>>>> 8c338e74e49a00bd760f38870f34fd44c1a89d3e
 end
