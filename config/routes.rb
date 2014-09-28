@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
+
   resources :breeds
+
+  resources :services
+
+
+  resources :users
+
+  root 'home#index'
+
+  get 'home/index'
+
 
   resources :services
 
