@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :species
+=======
+
+
+  resources :breeds
+
+  resources :services
+
+
+  resources :users
+
+  root 'home#index'
+
+  get 'home/index'
+
+
+  resources :services
+
+>>>>>>> 8c338e74e49a00bd760f38870f34fd44c1a89d3e
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
