@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
+  resources :service_types
+
   resources :species
-=======
 
 
   resources :breeds
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :services
 
->>>>>>> 8c338e74e49a00bd760f38870f34fd44c1a89d3e
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

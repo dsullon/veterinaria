@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Athome:</strong>
+  <%= @service_type.atHome %>
+</p>
+
+<p>
+  <strong>Insite:</strong>
+  <%= @service_type.inSite %>
+</p>
+
+<%= link_to 'Edit', edit_service_type_path(@service_type) %> |
+<%= link_to 'Back', service_types_path %>
