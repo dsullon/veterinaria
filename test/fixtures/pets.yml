@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  name: MyString
+  weight: 1.5
+  height: 1.5
+  gender: MyString
+  datebirth: 2014-09-30 16:43:45
+  family_id: 
+  breed_id: 
+  otherDetails: MyString
+  string: MyString
+
+two:
+  user_id: 
+  name: MyString
+  weight: 1.5
+  height: 1.5
+  gender: MyString
+  datebirth: 2014-09-30 16:43:45
+  family_id: 
+  breed_id: 
+  otherDetails: MyString
+  string: MyString

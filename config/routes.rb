@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :pets
+
+  resources :families
+
   resources :service_types
 
 
