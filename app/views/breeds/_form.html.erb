@@ -1,21 +1,114 @@
-<%= form_for(@breed) do |f| %>
-  <% if @breed.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@breed.errors.count, "error") %> prohibited this breed from being saved:</h2>
-
-      <ul>
-      <% @breed.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+          <div class="thumbnail">
+            <%= image_tag("veterinario.jpg", :class => "img-responsive img-thumbnail") %>       
+          </div>
+      </div>
+      <div class="col-md-4">
+      </br>
+        <h2>
+        Veterinaria UPC
+        </h2>
+        <h5>
+        Comprometidos con el bienestar de su mascota
+        </h5>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-1">
+          <div class="thumbnail">
+            <%= image_tag("usuario.png", :class => "img-responsive img-thumbnail") %>       
+          </div>
+      </div>
+      <div class="col-md-1">
+          <p><b>Usuario:</b>
+             Oscar
+          </p>
+          
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="row">
+      <div class="col-md-2">
+        <p></br>
+        <b>Opciones</b>
+        </br>
+        ------------
+       
+        <li>Mis mascotas</li>
+        <li>Raza</li>
+        <li>Especie</li>
+        <li>Servicio</li>
+        <li>Veterinaria</li>   
+        </p>
+      </div>
+      <div class="col-md-8">
+          
+            <%= form_for(@breed) do |f| %>
+            <% if @breed.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(@breed.errors.count, "error") %> prohibited this breed from being saved:</h2>
+
+            <ul>
+            <% @breed.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+            </ul>
+            </div>
+            <% end %>
+
+            <div class="field">
+            <%= f.label :name %><br>
+           <%= f.text_field :name %>
+            </div>
+            <div class="actions">
+            <%= f.submit %>
+           </div>
+          <% end %>
+
+
+      </div>
+
+      <div class="col-md-2">
+
+        <p align="center"></br>
+        <b>Twitter</b>
+        </br>
+        ------------   
+        </p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-2">
+
+        <p align="center"></br>
+        <b>Facebook</b>
+        </br>
+        ------------   
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+     
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
