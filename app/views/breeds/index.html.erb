@@ -1,25 +1,107 @@
-<h1>Listing breeds</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @breeds.each do |breed| %>
-      <tr>
-        <td><%= breed.name %></td>
-        <td><%= link_to 'Show', breed %></td>
-        <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
-        <td><%= link_to 'Destroy', breed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+          <div class="thumbnail">
+            <%= image_tag("veterinario.jpg", :class => "img-responsive img-thumbnail") %>       
+          </div>
+      </div>
+      <div class="col-md-4">
+      </br>
+        <h2>
+        Veterinaria UPC
+        </h2>
+        <h5>
+        Comprometidos con el bienestar de su mascota
+        </h5>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-1">
+          <div class="thumbnail">
+            <%= image_tag("usuario.png", :class => "img-responsive img-thumbnail") %>       
+          </div>
+      </div>
+      <div class="col-md-1">
+          <p><b>Usuario:</b>
+             Oscar
+          </p>
+          
+      </div>
+    </div>
 
-<br>
+    <div class="row">
+      <div class="col-md-2">
+        <p></br>
+        <b>Opciones</b>
+        </br>
+        ------------
+       
+        <li>Mis mascotas</li>
+        <li>Raza</li>
+        <li>Especie</li>
+        <li>Servicio</li>
+        <li>Veterinaria</li>   
+        </p>
+      </div>
+      <div class="col-md-8">
+        <h3>Raza de animales</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th colspan="3"></th>
+              </tr>
+             </thead>
 
-<%= link_to 'New Breed', new_breed_path %>
+            <tbody>
+              <% @breeds.each do |breed| %>
+                <tr>
+                  <td><%= breed.name %></td>
+                  <td><%= link_to 'Show', breed %></td>
+                  <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
+                  <td><%= link_to 'Destroy', breed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+             <% end %>
+            </tbody>
+          </table>
+
+          <br>
+
+          <%= link_to 'New Breed', new_breed_path %>
+      </div>
+
+      <div class="col-md-2">
+
+        <p align="center"></br>
+        <b>Twitter</b>
+        </br>
+        ------------   
+        </p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-2">
+
+        <p align="center"></br>
+        <b>Facebook</b>
+        </br>
+        ------------   
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+     
+    </div>
+</div>
+
+
+

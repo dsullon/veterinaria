@@ -11,13 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928022224) do
+ActiveRecord::Schema.define(version: 20140930214344) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "families", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pets", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.float    "weight"
+    t.float    "height"
+    t.string   "gender"
+    t.datetime "datebirth"
+    t.integer  "family_id"
+    t.integer  "breed_id"
+    t.string   "otherDetails"
+    t.string   "string"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pets", ["breed_id"], name: "index_pets_on_breed_id"
+  add_index "pets", ["family_id"], name: "index_pets_on_family_id"
+  add_index "pets", ["user_id"], name: "index_pets_on_user_id"
 
   create_table "service_types", force: true do |t|
     t.boolean  "atHome"
