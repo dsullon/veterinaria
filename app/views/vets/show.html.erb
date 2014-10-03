@@ -62,22 +62,48 @@
                           
                         </div>
       <div class="col-md-8">
-          	<p id="notice"><%= notice %></p>
+          
+            <p id="notice"><%= notice %></p>
 
-			<p>
-			  <strong>Name:</strong>
-			  <%= @service.name %>
-			</p>
+            <p>
+              <strong>Emailcontact:</strong>
+              <%= @vet.emailContact %>
+            </p>
 
-			<p>
-			  <strong>Price:</strong>
-			  <%= @service.price %>
-			</p>
+            <p>
+              <strong>Password:</strong>
+              <%= @vet.password %>
+            </p>
 
-			<%= link_to 'Edit', edit_service_path(@service) %> |
-			<%= link_to 'Back', services_path %>
-            
-     </div>
+            <p>
+              <strong>Name:</strong>
+              <%= @vet.name %>
+            </p>
+
+            <p>
+              <strong>Businessname:</strong>
+              <%= @vet.businessName %>
+            </p>
+
+            <p>
+              <strong>Document:</strong>
+              <%= @vet.document %>
+            </p>
+
+            <p>
+              <strong>Logo:</strong>
+              <%= @vet.logo %>
+            </p>
+
+            <p>
+              <strong>Address:</strong>
+              <%= @vet.address %>
+            </p>
+
+            <%= link_to 'Edit', edit_vet_path(@vet) %> |
+            <%= link_to 'Back', vets_path %>
+
+      </div>
       
              <!-- /padding -->
           
@@ -120,6 +146,8 @@
   </body>
 </html>
      
+
+
 
 
 

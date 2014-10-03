@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930214344) do
+ActiveRecord::Schema.define(version: 20141003190813) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
@@ -73,6 +73,18 @@ ActiveRecord::Schema.define(version: 20140930214344) do
     t.string   "phone"
     t.string   "mobilePhone"
     t.string   "avatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vets", force: true do |t|
+    t.string   "emailContact"
+    t.string   "password"
+    t.string   "name"
+    t.string   "businessName"
+    t.string   "document"
+    t.string   "logo"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
