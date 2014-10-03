@@ -1,14 +1,139 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @service.name %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @service.price %>
-</p>
+     <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Basis Template for Bootstrap 3</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet">
+    </head>
+  <body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row">
+          
+            <!-- sidebar -->
+            <div class="column col-sm-3" id="sidebar">
+                <a class="logo" href="#">Opciones</a>
+                <ul class="nav">
+                    <li class="active"><a href="#featured">Mis Mascotas</a>
+                    </li>
+                    <li><a href="#stories">Especie</a>
+                    </li>
+                    <li class="active"><a href="#featured">Raza</a>
+                    </li>
+                    <li class="active"><a href="#featured">Servicio</a>
+                    </li>
+                    <li class="active"><a href="#featured">Veterinaria</a>
+                    </li>
+                </ul>
+                </div>
+            <!-- /sidebar -->
+          
+            <!-- main -->
+            <div class="column col-sm-9" id="main">
+                <div class="padding">
+                    <div class="full col-sm-9">
+                      
+                        <!-- content -->
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h2>Mascotas Perú</h2><h5>Comprometidos con el bienestar de su mascota</h6>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+                            
+                            
+                          </div>
+                          <div class="col-sm-2">
+                            <p align="center"></br>
+                            <p><b>Usuario:</b>Oscar</p>
+                            <a href="#" class="pull-center"><img src="http://api.randomuser.me/portraits/thumb/men/19.jpg" class="img-circle"></a>
+                          </div> 
+                        </div>
+                        
+                        <div class="col-sm-12" id="featured">   
+                          <div class="page-header text-muted">
+                          Raza de su mascota
+                          </div> 
+                          
+                        </div>
+      <div class="col-md-8">
+          	<p id="notice"><%= notice %></p>
+
+			<p>
+			  <strong>Name:</strong>
+			  <%= @service.name %>
+			</p>
+
+			<p>
+			  <strong>Price:</strong>
+			  <%= @service.price %>
+			</p>
+
+			<%= link_to 'Edit', edit_service_path(@service) %> |
+			<%= link_to 'Back', services_path %>
+            
+     </div>
+      
+             <!-- /padding -->
+          
+            <!-- /main -->
+          
+        
+
+        <div class="col-md-4">
+
+        <p align="right"></br>
+        <b>Twitter</b>
+        </br>
+      ----------   
+        </p>
+      </div>
+    
+
+
+    <div class="row">
+      
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-4">
+
+        <p align="right"></br>
+        <b>Facebook</b>
+        </br>
+        ------------   
+        </p>
+      </div>
+    </div>
+
+
+    </div>
+</div>
+    
+  <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
