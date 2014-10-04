@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004204252) do
+ActiveRecord::Schema.define(version: 20141004232523) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
@@ -28,16 +28,14 @@ ActiveRecord::Schema.define(version: 20141004204252) do
   create_table "pets", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.float    "weight"
-    t.float    "height"
     t.string   "gender"
-    t.datetime "datebirth"
     t.integer  "family_id"
     t.integer  "breed_id"
     t.string   "otherDetails"
     t.string   "string"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "age"
   end
 
   add_index "pets", ["breed_id"], name: "index_pets_on_breed_id"
@@ -54,12 +52,6 @@ ActiveRecord::Schema.define(version: 20141004204252) do
   create_table "services", force: true do |t|
     t.string   "name"
     t.float    "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "species", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
