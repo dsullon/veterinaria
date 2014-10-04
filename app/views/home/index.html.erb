@@ -1,90 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Plantilla básica de Bootstrap</title>
- 
-    <!-- CSS de Bootstrap -->
-    <!--<link href="bootstrap.min.css" rel="stylesheets" media="screen">-->
- 
-    <!-- librerías opcionales que activan el soporte de HTML5 para IE8 -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <!--Div para encabezado-->
- 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-         
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
 
-            <a id="auth-modal-button" class="btn btn-default" data-toggle="modal" data-target="#auth-modal">
-                            <span class="btn-account img"></span>
-                            <span class="label">Ingresar / Registrarse</span>
-                        </a>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>         
     </div>
+    <div class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right" role="form">
+        <a id="auth-modal-button" class="btn btn-default" data-toggle="modal" data-target="#auth-modal">
+          <span class="btn-account img"></span>
+            <span class="label">Ingresar / Registrarse</span>
+        </a>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
 
 <!--Div para encabezado-->
 
 <!--Div para crear ventana emergente de login-->
 <div id="auth-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="auth-modal-content">
-                            <div id="login-modal-body"></div>
-                                <h2>Entra</h2>
-                                <hr>
-                                <form enctype="multipart/form-data" class="form-horizontal" role="form" id="loginForm" action="/auth/loginform" method="post">    <div class="form-group ">
-        <label class="col-sm-4 control-label required" for="LoginFormModel_email">Correo Electrónico</label>        <div class="controls col-sm-8">
-            <input class="form-control" type="email" name="LoginFormModel[email]" id="LoginFormModel_email">                    </div>
-    </div>
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          </div>
+          <div class="modal-body">
+              <div class="auth-modal-content">
+                  <div id="login-modal-body"></div>
+                      <h2>Inicio de sesión</h2>
+                      <hr>
+                      <%= form_for(resource, :as => :user, :url => registration_path(:user), :class => 'form-horizontal') do |f| %>
+                        <div class="form-group ">
+                          <%= f.label :email, :class => 'col-sm-4 control-label required'  %>
+                          <div class="controls col-sm-8">
+                            <%= f.email_field :email, :class => 'form-control' %>
+                          </div>                          
+                        </div>
 
-    <div class="form-group ">
-        <label class="col-sm-4 control-label required" for="LoginFormModel_password">Contraseña</label>        <div class="controls col-sm-8">
-            <input class="form-control" name="LoginFormModel[password]" id="LoginFormModel_password" type="password">                        <a class="help-block" href="/auth/forgotpassword" data-toggle="modal" data-target="#forgot-password-modal" id="forgot-password-link">¿Olvidaste tu contraseña?</a>
-        </div>
-    </div>
+                         <div class="form-group ">
+                          <%= f.label :password, :class => 'col-sm-4 control-label required'  %>
+                          <div class="controls col-sm-8">
+                            <%= f.password_field :password, :class => 'form-control' %>
+                            <%= link_to "Forgot your password?", new_password_path(:user) %>
+                          </div>                          
+                        </div>
 
-    <div class="form-group">
-        <label class="col-sm-4 control-label" for="login_persistent">Recordarme</label>        <div class="controls col-sm-8">
-            <div class="checkbox">
-                <input type="checkbox" name="persistent" id="login_persistent" checked="checked">
-            </div>
-        </div>
-    </div>
+                        <div class="form-group">
+                          <%= f.label :remember_me, :class => 'col-sm-4 control-label' %>
+                          <div class="controls col-sm-8">
+                            <div class="checkbox">
+                              <%= f.check_box :remember_me %>
+                            </div>
+                          </div>
+                        </div>
 
-    <div class="form-group">
-        <div class="col-sm-offset-4 col-sm-8">
-            <input id="SubmitLoginForm" class="btn btn-primary btn-lg btn-block" type="submit" name="yt0" value="Entra">        </div>
-    </div>
-
-    <input type="hidden" name="checkoutForm" value="false">
-    <input type="hidden" name="vendorCode" value="">
-
-        <p id="login-ajax-error"></p>
-</form>
-                            <div id="registration-modal-body"></div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-4 col-sm-8">
+                            <%= f.submit 'Sign in', :class => 'btn btn-primary btn-lg btn-block' %>
+                          </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    <% end %>
+                        <div id="registration-modal-body"></div>
                         </div>
                     </div>
                 </div>
@@ -108,11 +90,11 @@
       <div class="row">
         <div class="col-md-4">
           <center><h2>Mira nuestros Servicios</h2></center>
-            <a href="services"> <center>  <%=image_tag("servicios.jpg", :class => "img-responsive img-thumbnail")%></center></a>
+            <center> <%=image_tag("servicios.jpg", :class => "img-responsive img-thumbnail")%></center>
         </div>
         <div class="col-md-4">
           <center><h2>Veterinarias Afiliadas</h2></center>
-            <a href="vets"><center><%=image_tag("veterinarias.jpg", :class => "img-responsive img-thumbnail")%></center></a>
+            <center><%=image_tag("veterinarias.jpg", :class => "img-responsive img-thumbnail")%></center>
 
        </div>
         <div class="col-md-4">
@@ -132,18 +114,3 @@
         <p>© Company 2014</p>
       </footer>
     </div>
-
-
-
-<!--Div para pie de pagina-->
-
-
-    <!-- Librería jQuery requerida por los plugins de JavaScript -->
-    
- 
-    <!-- Todos los plugins JavaScript de Bootstrap (también puedes
-         incluir archivos JavaScript individuales de los únicos
-         plugins que utilices) -->
-  
-  </body>
-</html>
