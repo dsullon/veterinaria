@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  layout 'plantilla'
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   # GET /pets
