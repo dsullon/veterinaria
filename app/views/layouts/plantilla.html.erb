@@ -48,7 +48,7 @@
                             <!--Inicio Menu-->                            
                             <% if user_signed_in? %>
                               <%= render "users/shared/menu" %> 
-                            <% else vet_signed_in? %>
+                            <% elsif vet_signed_in? %>
                               <%= render "vets/shared/menu" %>
                             <%end%>
                             <!--Fin de menu-->

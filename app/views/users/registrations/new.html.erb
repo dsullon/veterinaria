@@ -1,33 +1,91 @@
-<h2>Sign up</h2>
+<h3>Nuevo usuario</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true%></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :name, "Nombres: ", class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.text_field :name, class:"form-control", placeholder:"Nombres del usuario"%>
+      </div>                            
+    </div>
+  </div>
 
-  <div><%= f.label :lastName %><br />
-  <%= f.text_field :lastName %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :lastName, "Apellidos: ", class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.text_field :lastName, class:"form-control", placeholder:"Apellidos del usuario"%>
+      </div>                            
+    </div>
+  </div>
 
-  <div><%= f.label :address %><br />
-  <%= f.text_field :address %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :address, "Dirección: ", class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.text_field :address, class:"form-control", placeholder:"Dirección del usuario"%>
+      </div>                            
+    </div>
+  </div>
 
-  <div><%= f.label :phone %><br />
-  <%= f.text_field :phone %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :phone, "Teléfono: ", class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.text_field :phone, class:"form-control", placeholder:"Teléfono del usuario"%>
+      </div>                            
+    </div>
+  </div>
 
-  <div><%= f.label :mobilePhone %><br />
-  <%= f.text_field :mobilePhone %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :mobilePhone, "Celular: ", class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.text_field :mobilePhone, class:"form-control", placeholder:"Celular del usuario"%>
+      </div>                            
+    </div>
+  </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email%></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :email, "Email: ", class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">@</span>
+        <%= f.email_field :email, class:"form-control", placeholder:"Email del usuario"%>
+      </div>                            
+    </div>
+  </div>
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :password, "Contraseña: " , class:'col-sm-3 control-label required'  %>
+      <% if @validatable %><i>(La longitud mínima es de <%= @minimum_password_length %> caracteres)</i><% end %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Contraseña"%>
+      </div>
+    </div>
+  </div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :password_confirmation, "Confirmar contraseña: " , class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirmar contraseña"%>
+      </div>
+    </div>
+  </div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Registrarse", class:'btn btn-default btn-sm' %></div>
 <% end %>
-
-<%= render "users/shared/links" %>
+<p>
+  <%= render "users/shared/links" %>
+</p>

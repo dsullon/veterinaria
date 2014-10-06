@@ -1,35 +1,79 @@
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<h3>Editar Datos</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name, "Nombre" %><br />
-  <%= f.text_field :name, autofocus: true, placeholder:"Nombre" %></div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <%= f.label :name, "Nombre: ", class:'col-sm-3 control-label required'  %>
+        <div class="input-group input-group-sm col-sm-9">
+          <span class="input-group-addon">*</span>
+          <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"Nombre de la veterinaria"%>
+        </div>                            
+      </div>
+    </div>
 
-  <div><%= f.label :address, "Dirección" %><br />
-  <%= f.text_field :address, placeholder:"Dirección" %></div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <%= f.label :address, "Dirección: ", class:'col-sm-3 control-label required'  %>
+        <div class="input-group input-group-sm col-sm-9">
+          <span class="input-group-addon">*</span>
+          <%= f.text_field :address, class:"form-control", placeholder:"Dirección de la veterinaria"%>
+        </div>                            
+      </div>
+    </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <%= f.label :email, "Email: ", class:'col-sm-3 control-label required'  %>
+        <div class="input-group input-group-sm col-sm-9">
+          <span class="input-group-addon">@</span>
+          <%= f.email_field :email, class:"form-control", placeholder:"Email de contacto"%>
+        </div>                            
+      </div>
+    </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+    <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :password, "Contraseña: " , class:'col-sm-3 control-label required'  %>
+      <i>(Deja en blanco si no necesitas cambiar esto.)</i>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Contraseña"%>
+      </div>
+    </div>
+  </div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :password_confirmation, "Confirmar contraseña: " , class:'col-sm-3 control-label required'  %>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirmar contraseña"%>
+      </div>                          
+    </div>
+  </div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :current_password, "Contraseña actual: " , class:'col-sm-3 control-label required'  %>
+      <i>(Ingrese su password actual para confirmar los cambios.)</i>
+      <div class="input-group input-group-sm col-sm-9">
+        <span class="input-group-addon">*</span>
+        <%= f.password_field :current_password, autocomplete: "off", class:"form-control", placeholder:"Contraseña actual"%>
+      </div>
+    </div>
+  </div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit "Actualizar", class:'btn btn-default btn-sm' %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h4>Cancela mi cuenta</h4>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estás seguro de darte de baja?" }, method: :delete, class:'btn btn-default btn-sm' %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Regresar", :back %>
