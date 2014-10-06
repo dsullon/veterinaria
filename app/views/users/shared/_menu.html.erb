@@ -1,0 +1,17 @@
+<ul class="nav nav-pills">
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    	<img src="http://api.randomuser.me/portraits/thumb/men/19.jpg" class="img-circle"/>
+    	<%= current_user.name %>
+        <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+		<li><%= link_to "Editar perfil", edit_user_registration_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li>
+	</ul>
+  </li>
+</ul>
+
+
+

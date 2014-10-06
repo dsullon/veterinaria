@@ -36,9 +36,13 @@
                             
                          	</div>
                           <div class="col-sm-2">
-                            	<p align="center"></br>
-                            	<p><b>Usuario:</b>Oscar</p>
-                            	<a href="#" class="pull-center"><img src="http://api.randomuser.me/portraits/thumb/men/19.jpg" class="img-circle"/></a>
+                            <!--Inicio Menu-->                            
+                            <% if user_signed_in? %>
+                              <%= render "users/shared/menu" %> 
+                            <% else vet_signed_in? %>
+                              <%= render "vets/shared/menu" %>
+                            <%end%>
+                            <!--Fin de menu-->
                           </div> 
                        	
                         

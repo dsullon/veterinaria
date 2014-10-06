@@ -34,7 +34,7 @@
                   <div id="login-modal-body"></div>
                       <h2>Inicio de sesión</h2>
                       <hr>
-                      <%= form_for(resource, :as => :user, :url => registration_path(:user), :class => 'form-horizontal') do |f| %>
+                      <%= form_for(resource, :as => :user, :url => session_path(:user), :class => 'form-horizontal') do |f| %>
                         <div class="form-group ">
                           <%= f.label :email, :class => 'col-sm-4 control-label required'  %>
                           <div class="controls col-sm-8">
@@ -88,7 +88,7 @@
           <%else%>
             <p><%= link_to "Registrarse", new_user_registration_path %>
             Si ya tienes cuenta <%= link_to "inicia sesion", new_user_session_path %></p>
-            <p>¿Eres una veterinaria? <%= link_to "inicia sesion", new_vet_registration_path %></p>
+            <p>¿Eres una veterinaria? <%= link_to "inicia sesion", new_vet_session_path %></p>
           <%end%>
         </p>  
         
