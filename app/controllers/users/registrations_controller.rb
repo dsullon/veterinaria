@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
  #before_filter :configure_sign_up_params, only: [:create]
  #before_filter :configure_account_update_params, only: [:update]
-
+ layout 'plantilla'
  before_filter :configure_permitted_parameters
 
   protected
