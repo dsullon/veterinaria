@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-
-  devise_for :vets, controllers:{registrations:'vets'}
-  devise_for :users, controllers:{registrations:'users'}
+  devise_for :vets , controllers:{registrations:'vets/registrations'}
+  devise_for :users , controllers:{registrations:'users/registrations'}
   resources :pets
   
 

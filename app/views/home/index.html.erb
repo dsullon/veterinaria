@@ -78,6 +78,19 @@
       <div class="container">
         <h1><center>Mascotas Perú</center></h1>
         <p>Somos una red de veterinarias a nivel nacional, que ofrece en un solo lugar, todo tipo de servicios para tu mascota. Tan solo debes ingresar a nuestra plataforma y accederas a multiples beneficios.</p>
+        <p>
+          <% if user_signed_in? %>
+            Usuario: <%= current_user.name %>
+            <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+          <% elsif vet_signed_in? %>
+            Veterinaria: <%= current_vet.name %>
+            <%= link_to "Cerrar sesion", destroy_vet_session_path, method: :delete %>
+          <%else%>
+            <p><%= link_to "Registrarse", new_user_registration_path %>
+            Si ya tienes cuenta <%= link_to "inicia sesion", new_user_session_path %></p>
+            <p>¿Eres una veterinaria? <%= link_to "inicia sesion", new_vet_registration_path %></p>
+          <%end%>
+        </p>  
         
       </div>
     </div>

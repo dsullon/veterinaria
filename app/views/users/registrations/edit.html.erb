@@ -1,16 +1,25 @@
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name, "Nombre" %><br />
-  <%= f.text_field :name, autofocus: true, placeholder:"Nombre" %></div>
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true%></div>
 
-  <div><%= f.label :address, "Dirección" %><br />
-  <%= f.text_field :address, placeholder:"Dirección" %></div>
+  <div><%= f.label :lastName %><br />
+  <%= f.text_field :lastName %></div>
+
+  <div><%= f.label :address %><br />
+  <%= f.text_field :address %></div>
+
+  <div><%= f.label :phone %><br />
+  <%= f.text_field :phone %></div>
+
+  <div><%= f.label :mobilePhone %><br />
+  <%= f.text_field :mobilePhone %></div>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= f.email_field :email%></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
