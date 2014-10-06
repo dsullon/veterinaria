@@ -75,13 +75,24 @@
 
 <!--Div para titulo-->
 <div class="jumbotron">
-      <div class="container">
-        <h1><center>Mascotas Perú</center></h1>
-        <p>Somos una red de veterinarias a nivel nacional, que ofrece en un solo lugar, todo tipo de servicios para tu mascota. Tan solo debes ingresar a nuestra plataforma y accederas a multiples beneficios.</p>
+  <div class="container">
+       <div class="col-md-12">
+        <center><%=image_tag("LOGOTIPO.jpg",:class => "img-responsive img-thumbnail")%> </center>
+        </div>
+        
+        
+        <p></p>
+       
+
+
+        <div class="col-md-12">
+        <p></p>
+        <p><font face= "segoe print" size="5">Somos una red de veterinarias a nivel nacional, que ofrece en un solo lugar, todo tipo de <center>servicios para tu mascota.</center></p><p> Tan solo debes ingresar a nuestra plataforma y accederas a múltiples beneficios.</font></p>
         <p>
-          <% if user_signed_in? %>
+        </div>
+          <center><% if user_signed_in? %>
             Usuario: <%= current_user.name %>
-            <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+            <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></center>
           <% elsif vet_signed_in? %>
             Veterinaria: <%= current_vet.name %>
             <%= link_to "Cerrar sesion", destroy_vet_session_path, method: :delete %>
@@ -92,8 +103,8 @@
           <%end%>
         </p>  
         
-      </div>
-    </div>
+  </div>
+ </div>
 
 <!--Div para titulo-->
 
@@ -101,29 +112,18 @@
 <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <center><h2>Mira nuestros Servicios</h2></center>
-            <center> <%=image_tag("servicios.jpg", :class => "img-responsive img-thumbnail")%></center>
-        </div>
-        <div class="col-md-4">
-          <center><h2>Veterinarias Afiliadas</h2></center>
+       
+        <div class="col-md-12">
+          <center><h2><font face= "segoe print" size="6">Veterinarias Afiliadas</font></h2></center>
             <center><%=image_tag("veterinarias.jpg", :class => "img-responsive img-thumbnail")%></center>
 
        </div>
-        <div class="col-md-4">
-          <center><h2>Estas Aquí</h2></center>
-           
-              
-
-
-
-
-        </div>
+        
       </div>
-
+</div>
       <hr>
 
       <footer>
-        <p>© Company 2014</p>
+        <p>© Coped S.A Company 2014</p>
       </footer>
-    </div>
+    

@@ -1,11 +1,14 @@
+<div class="col-sm-12" id="featured">   
 
+  <div class="page-header text-muted">
+                            Mis Mascotas
+  </div> </div>
+  <div class="row"> 
+  <div class="col-md-8">
 
 <% if @pets.count  > 0 %>
-  
-  
 
-     
-<table>
+     <table>
   <thead>
     <tr>
       
@@ -48,8 +51,5 @@
 
 <% end %>
 <%= link_to 'Registrar Mascota', new_pet_path %>
-<!-- /padding -->
-            
-            <!-- /main -->
-          
-        
+
+
