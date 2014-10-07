@@ -1,4 +1,5 @@
 class FamiliesController < ApplicationController
+  layout 'plantilla'
   before_action :set_family, only: [:show, :edit, :update, :destroy]
 
   # GET /families

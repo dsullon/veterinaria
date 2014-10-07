@@ -1,116 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Veterinaria</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-    </head>
+  <head>
+    <title>Veterinaria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
   <body>
-<div class="wrapper">
- <div class="box">
-  <div class="row">
-          
-            <!-- sidebar -->
-            <div class="column col-sm-3" id="sidebar">
-                <a class="logo" href="#"><font face= "segoe print" size="6">Opciones</font></a>
-                <ul class="nav">
-                    
-                    
-                    <li><font face= "segoe print" size="3"><%= link_to "Mis Mascotas", pets_path %></font></li>
-                    <p></p>
-                    <li><font face= "segoe print" size="3"><%= link_to "Solicitar Servicio", pets_path %></font></li>
-                       <p></p>
-                    <li><font face= "segoe print" size="3"><%= link_to "Consultas de Servicios", pets_path %></font></li>
-                       <p></p>
-                    <li><font face= "segoe print" size="3"><%= link_to "Veterinarias Afiliadas", pets_path %></font></li>
-                       <p></p>
-          
-                </ul>
-             </div>
-            <!-- /sidebar -->
-          
-             <!-- main -->
-   <div class="column col-sm-9" id="main">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <% if user_signed_in? %>
+          <%= render "users/shared/opcion" %>
+        <% elsif vet_signed_in? %>
+          <%= render "vets/shared/opcion" %>
+        <%end%>
+      </div>
+      <!-- /#sidebar-wrapper -->
 
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">    
+            <div class="col-sm-10">
+              <a href="#menu-toggle" class="btn btn-link btn-xs" id="menu-toggle">Opciones</a>
+              <h2>Mascotas Perú - <small>Comprometidos con el bienestar de su mascota</small></h2>            
+            </div>
+            <div class="col-sm-2">
+              <!--Inicio Menu-->                            
+              <% if user_signed_in? %>
+                <%= render "users/shared/menu" %> 
+              <% elsif vet_signed_in? %>
+                <%= render "vets/shared/menu" %>
+              <%end%>
+              <!--Fin de menu-->
+            </div>
+          </div>
 
-  <div class="padding">
-  <div class="full col-sm-9">
-                      
-                        <!-- content -->
-                        <div class="row">    
-                         	<div class="col-sm-10">
-                            	<h2>Mascotas Perú</h2><h5>Comprometidos con el bienestar de su mascota</h6>
-                            
-                         	</div>
-                          <div class="col-sm-2">
-                            <!--Inicio Menu-->                            
-                            <% if user_signed_in? %>
-                              <%= render "users/shared/menu" %> 
-                            <% elsif vet_signed_in? %>
-                              <%= render "vets/shared/menu" %>
-                            <%end%>
-                            <!--Fin de menu-->
-                          </div> 
-                       	
-                        
-  <!--<div class="col-sm-12" id="featured">   
-  <div class="page-header text-muted">
-                          	Mis Mascotas
-  </div> -->
-                          
-  </div>
+          <div class="row">
+            <div class="col-lg-9">
+              <%= yield %>
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <!-- Redes sociales -->
+                  
+                <!-- /#Redes sociales -->
+              </div>
+            </div>
+          </div>
 
-
-  </div><!--Al parecer es el div cierra de <div class="full col-sm-9">-->
-
-  <!--<div class="row"> 
-  <div class="col-md-8">-->
-
-  <%= yield %>
-
-	 </div> <!-- /padding -->
-
-
-    <div class="col-md-4">
-        	 
-        						<p align="right"></br>
-        						<b>Twitter</b>
-        						</br>
-                      ------------
-        						</p>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
     </div>
-    
-
-
-    <div class="row">
-                  <div class="col-md-2">
-                   </div>
-                   <div class="col-md-8">
-                   </div>
-                    <div class="col-md-2">
-
-                         <p align="right"></br>
-                              <b>Facebook</b>
-                                   </br>
-                                 ------------   
-                                    </p>
-                    </div>
-    </div>
-
-
-
-
-
-
-    </div>
-    </div>
-  <!-- script references -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- /#wrapper -->
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
   </body>
-</html>
-     
-
-
+</html>     

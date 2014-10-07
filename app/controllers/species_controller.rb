@@ -1,4 +1,5 @@
 class SpeciesController < ApplicationController
+  layout 'plantilla'
   before_action :set_species, only: [:show, :edit, :update, :destroy]
 
   # GET /species

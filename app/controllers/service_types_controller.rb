@@ -1,4 +1,5 @@
 class ServiceTypesController < ApplicationController
+  layout 'plantilla'
   before_action :set_service_type, only: [:show, :edit, :update, :destroy]
 
   # GET /service_types

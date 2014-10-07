@@ -1,4 +1,5 @@
 class BreedsController < ApplicationController
+  layout 'plantilla'
   before_action :set_breed, only: [:show, :edit, :update, :destroy]
 
   # GET /breeds

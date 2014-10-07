@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-8">
       <%= f.label :name, "Nombre: ", class:'col-sm-3 control-label required'  %>
       <div class="input-group input-group-sm col-sm-9">
         <span class="input-group-addon">*</span>
@@ -14,7 +14,7 @@
   </div>
 
   <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-8">
       <%= f.label :address, "Dirección: ", class:'col-sm-3 control-label required'  %>
       <div class="input-group input-group-sm col-sm-9">
         <span class="input-group-addon">*</span>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-8">
       <%= f.label :email, "Email: ", class:'col-sm-3 control-label required'  %>
       <div class="input-group input-group-sm col-sm-9">
         <span class="input-group-addon">@</span>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-8">
       <%= f.label :password, "Contraseña: " , class:'col-sm-3 control-label required'  %>
       <% if @validatable %><i>(La longitud mínima es de <%= @minimum_password_length %> caracteres)</i><% end %>
       <div class="input-group input-group-sm col-sm-9">
@@ -45,7 +45,7 @@
   </div>
 
   <div class="row">
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-8">
       <%= f.label :password_confirmation, "Confirmar contraseña: " , class:'col-sm-3 control-label required'  %>
       <div class="input-group input-group-sm col-sm-9">
         <span class="input-group-addon">*</span>
