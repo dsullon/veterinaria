@@ -10,7 +10,7 @@
 <div class="row"> 
   <div class="col-sm-12">
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Requerimiento</th>
@@ -24,9 +24,9 @@
   <tbody>
     <% @request_details.each do |request_detail| %>
       <tr>
-        <td><%= request_detail.request %></td>
-        <td><%= request_detail.service %></td>
-        <td><%= request_detail.pet %></td>
+        <td><%= request_detail.request.id %></td>
+        <td><%= request_detail.service.name %></td>
+        <td><%= request_detail.pet.name %></td>
         <td><%= request_detail.comment %></td>
         <td><%= link_to 'Show', request_detail %></td>
         <td><%= link_to 'Edit', edit_request_detail_path(request_detail) %></td>
@@ -38,7 +38,7 @@
 
 <br>
 
-<%= link_to 'New Request detail', new_request_detail_path %>
+<%= link_to 'Nuevo detalle de requerimiento', new_request_detail_path %>
 </br>
 </br>
 <%= link_to 'Regresar', requests_path %>
