@@ -5,7 +5,7 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.where(user: current_user)
+   @pets = Pet.where(user: current_user)
   end
 
   # GET /pets/1

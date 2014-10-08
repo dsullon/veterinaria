@@ -6,6 +6,7 @@ class FamiliesController < ApplicationController
   # GET /families.json
   def index
     @families = Family.all
+    #@families = Family.where(vet: current_vet)
   end
 
   # GET /families/1

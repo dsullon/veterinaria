@@ -6,6 +6,7 @@ class BreedsController < ApplicationController
   # GET /breeds.json
   def index
     @breeds = Breed.all
+    #@breeds = Breed.where(vet: current_vet)
   end
 
   # GET /breeds/1
