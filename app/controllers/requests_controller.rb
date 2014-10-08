@@ -21,18 +21,53 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @request.save
+     
+     respond_to do |format|
+      if @request.save
+        format.html { redirect_to action: "index" }
+        #format.html { redirect_to @request, notice: 'request was successfully created.' }
+        format.json { render :show, status: :created, location: @request }
+      else
+        format.html { render :new }
+        format.json { render json: @request.errors, status: :unprocessable_entity }
+      end
+    end
+
+
+
+
+
+    
     #respond_with(@request)
   end
 
   def update
-    @request.update(request_params)
+    #@request.update(request_params)
     #respond_with(@request)
+
+    respond_to do |format|
+      if @request.update(request_params)
+        format.html { redirect_to action: "index" }
+        #format.html { redirect_to @request, notice: 'request was successfully updated.' }
+        format.json { render :show, status: :ok, location: @request }
+      else
+        format.html { render :edit }
+        format.json { render json: @request.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
     @request.destroy
     #respond_with(@request)
+
+
+
+    respond_to do |format|
+      format.html { redirect_to action: "index" }
+      #format.html { redirect_to requests_url, notice: 'request was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
