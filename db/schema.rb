@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008162255) do
+ActiveRecord::Schema.define(version: 20141008182846) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
@@ -66,9 +66,11 @@ ActiveRecord::Schema.define(version: 20141008162255) do
     t.integer  "vet_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "requests", ["serviceType_id"], name: "index_requests_on_serviceType_id"
+  add_index "requests", ["user_id"], name: "index_requests_on_user_id"
   add_index "requests", ["vet_id"], name: "index_requests_on_vet_id"
 
   create_table "service_types", force: true do |t|
