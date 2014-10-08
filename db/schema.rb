@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008090436) do
+ActiveRecord::Schema.define(version: 20141008162255) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
@@ -40,6 +40,36 @@ ActiveRecord::Schema.define(version: 20141008090436) do
   add_index "pets", ["breed_id"], name: "index_pets_on_breed_id"
   add_index "pets", ["family_id"], name: "index_pets_on_family_id"
   add_index "pets", ["user_id"], name: "index_pets_on_user_id"
+
+  create_table "request_details", force: true do |t|
+    t.integer  "request_id"
+    t.integer  "service_id"
+    t.integer  "pet_id"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "request_details", ["pet_id"], name: "index_request_details_on_pet_id"
+  add_index "request_details", ["request_id"], name: "index_request_details_on_request_id"
+  add_index "request_details", ["service_id"], name: "index_request_details_on_service_id"
+
+  create_table "requests", force: true do |t|
+    t.date     "requestDate"
+    t.integer  "serviceType_id"
+    t.string   "address"
+    t.date     "proposeDate"
+    t.time     "proposeHour"
+    t.boolean  "isPending"
+    t.boolean  "isConfirmed"
+    t.string   "comment"
+    t.integer  "vet_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "requests", ["serviceType_id"], name: "index_requests_on_serviceType_id"
+  add_index "requests", ["vet_id"], name: "index_requests_on_vet_id"
 
   create_table "service_types", force: true do |t|
     t.boolean  "atHome"

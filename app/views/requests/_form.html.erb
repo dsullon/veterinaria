@@ -1,0 +1,53 @@
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :requestDate %><br>
+    <%= f.date_select :requestDate %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceType_id %><br>
+    <%= f.text_field :serviceType_id %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :proposeDate %><br>
+    <%= f.date_select :proposeDate %>
+  </div>
+  <div class="field">
+    <%= f.label :proposeHour %><br>
+    <%= f.time_select :proposeHour %>
+  </div>
+  <div class="field">
+    <%= f.label :isPending %><br>
+    <%= f.check_box :isPending %>
+  </div>
+  <div class="field">
+    <%= f.label :isConfirmed %><br>
+    <%= f.check_box :isConfirmed %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :vet_id %><br>
+    <%= f.text_field :vet_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

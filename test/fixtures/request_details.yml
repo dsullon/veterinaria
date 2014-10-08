@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  request_id: 
+  service_id: 
+  pet_id: 
+  comment: MyString
+
+two:
+  request_id: 
+  service_id: 
+  pet_id: 
+  comment: MyString

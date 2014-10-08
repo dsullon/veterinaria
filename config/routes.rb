@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :request_details
+
+  resources :requests
+
   devise_scope :vet do
      get 'vets', to: 'vets/registrations#index', as: 'vet'
   end

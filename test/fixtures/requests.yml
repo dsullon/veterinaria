@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  requestDate: 2014-10-08
+  serviceType_id: 
+  address: MyString
+  proposeDate: 2014-10-08
+  proposeHour: 2014-10-08 11:20:16
+  isPending: false
+  isConfirmed: false
+  comment: MyString
+  vet_id: 
+
+two:
+  requestDate: 2014-10-08
+  serviceType_id: 
+  address: MyString
+  proposeDate: 2014-10-08
+  proposeHour: 2014-10-08 11:20:16
+  isPending: false
+  isConfirmed: false
+  comment: MyString
+  vet_id: 

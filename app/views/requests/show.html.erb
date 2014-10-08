@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requestdate:</strong>
+  <%= @request.requestDate %>
+</p>
+
+<p>
+  <strong>Servicetype:</strong>
+  <%= @request.serviceType %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @request.address %>
+</p>
+
+<p>
+  <strong>Proposedate:</strong>
+  <%= @request.proposeDate %>
+</p>
+
+<p>
+  <strong>Proposehour:</strong>
+  <%= @request.proposeHour %>
+</p>
+
+<p>
+  <strong>Ispending:</strong>
+  <%= @request.isPending %>
+</p>
+
+<p>
+  <strong>Isconfirmed:</strong>
+  <%= @request.isConfirmed %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @request.comment %>
+</p>
+
+<p>
+  <strong>Vet:</strong>
+  <%= @request.vet %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
