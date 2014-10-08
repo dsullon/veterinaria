@@ -3,7 +3,8 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
 
   def index
-    @requests = Request.all
+    @requests = Request.where(user: current_user)
+    #@requests = Request.all
     #respond_with(@requests)
   end
 
@@ -76,6 +77,6 @@ class RequestsController < ApplicationController
     end
 
     def request_params
-      params.require(:request).permit(:requestDate, :serviceType_id, :address, :proposeDate, :proposeHour, :isPending, :isConfirmed, :comment, :vet_id)
+      params.require(:request).permit(:requestDate, :serviceType_id, :address, :proposeDate, :proposeHour, :isPending, :isConfirmed, :comment, :vet_id, :user_id)
     end
 end
