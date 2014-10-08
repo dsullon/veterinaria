@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_scope :vet do
+     get 'vets', to: 'vets/registrations#index', as: 'vet'
+  end
   devise_for :vets , controllers:{registrations:'vets/registrations'}
+
   devise_for :users , controllers:{registrations:'users/registrations'}
   resources :pets
-  
 
   resources :families
 

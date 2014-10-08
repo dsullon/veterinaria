@@ -9,13 +9,17 @@ class Vets::RegistrationsController < Devise::RegistrationsController
     # my custom fields are :name, :heard_how
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit(:name, :address, :email, :password)
+        u.permit(:name, :address, :email, :password, :phone, :url)
       end
       devise_parameter_sanitizer.for(:account_update) do |u|
-        u.permit(:name, :address, :email, :password, :current_password)
+        u.permit(:name, :address, :email, :password, :phone, :url, :current_password)
       end
     end
 
+    def index
+      # not a standard action
+      # deactivate code here
+    end
   # GET /resource/sign_up
   # def new
   #   super

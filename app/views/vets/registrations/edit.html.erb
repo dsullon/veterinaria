@@ -25,10 +25,31 @@
 
     <div class="row">
       <div class="form-group col-sm-8">
+        <%= f.label :phone, "Teléfono: ", class:'col-sm-3 control-label required'  %>
+        <div class="input-group input-group-sm col-sm-9">
+          <span class="input-group-addon">*</span>
+          <%= f.text_field :phone, class:"form-control", placeholder:"Teléfono de la veterinaria"%>
+        </div>                            
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-sm-8">
         <%= f.label :email, "Email: ", class:'col-sm-3 control-label required'  %>
         <div class="input-group input-group-sm col-sm-9">
           <span class="input-group-addon">@</span>
           <%= f.email_field :email, class:"form-control", placeholder:"Email de contacto"%>
+        </div>                            
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-sm-8">
+        <%= f.label :url, "Url: ", class:'col-sm-3 control-label'  %>
+        <i>(ej. www.miweb.com)</i>
+        <div class="input-group input-group-sm col-sm-9">
+          <span class="input-group-addon">*</span>
+          <%= f.text_field :url, class:"form-control", placeholder:"Web site de la veterinaria"%>
         </div>                            
       </div>
     </div>

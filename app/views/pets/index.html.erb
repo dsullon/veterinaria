@@ -38,6 +38,8 @@
         <% end %>
       </tbody>
     </table>
+    <br>
+    <%= link_to 'Nueva mascota', new_pet_path %>
     <% end%>
     <% if @pets.count == 0 %>
       <p> Usted no tiene mascotas, favor registrelas <%= link_to 'aquí', new_pet_path %> </p>
