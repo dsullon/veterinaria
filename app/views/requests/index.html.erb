@@ -36,7 +36,7 @@
         <td><%= request.isPending %></td>
         <td><%= request.isConfirmed %></td>
         <td><%= request.comment %></td>
-        <td><%= request.vet %></td>
+        <td><%= request.vet.name %></td>
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
