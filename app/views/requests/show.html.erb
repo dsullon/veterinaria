@@ -1,49 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Requestdate:</strong>
+  <strong>Fecha de requerimiento:</strong>
   <%= @request.requestDate %>
 </p>
 
 <p>
-  <strong>Servicetype:</strong>
+  <strong>Lugar del servicio:</strong>
   <%= @request.serviceType %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Direccion:</strong>
   <%= @request.address %>
 </p>
 
 <p>
-  <strong>Proposedate:</strong>
+  <strong>Fecha para el servicio:</strong>
   <%= @request.proposeDate %>
 </p>
 
 <p>
-  <strong>Proposehour:</strong>
+  <strong>Hora para el servicio:</strong>
   <%= @request.proposeHour %>
 </p>
 
 <p>
-  <strong>Ispending:</strong>
+  <strong>Pendiente:</strong>
   <%= @request.isPending %>
 </p>
 
 <p>
-  <strong>Isconfirmed:</strong>
+  <strong>Completado:</strong>
   <%= @request.isConfirmed %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>Comentario:</strong>
   <%= @request.comment %>
 </p>
 
 <p>
-  <strong>Vet:</strong>
-  <%= @request.vet %>
+  <strong>Veterinaria:</strong>
+  <%= @request.vet.name %>
 </p>
+
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>

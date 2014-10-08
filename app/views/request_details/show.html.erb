@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Request:</strong>
-  <%= @request_detail.request %>
+  <strong>Requerimiento:</strong>
+  <%= @request_detail.request.id %>
 </p>
 
 <p>
-  <strong>Service:</strong>
-  <%= @request_detail.service %>
+  <strong>Servicio:</strong>
+  <%= @request_detail.service.name %>
 </p>
 
 <p>
-  <strong>Pet:</strong>
-  <%= @request_detail.pet %>
+  <strong>Mascota:</strong>
+  <%= @request_detail.pet.name %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>Comentario:</strong>
   <%= @request_detail.comment %>
 </p>
 
