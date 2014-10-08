@@ -11,43 +11,118 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :requestDate %><br>
-    <%= f.date_select :requestDate %>
+  <div class="row">
+    <div class="form-group col-sm-8">
+      <div class="input-group input-group-sm col-sm-9">
+        <%= f.hidden_field :user_id, :value => current_user.id, class:"form-control", placeholder:"usuario"%>
+      </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :serviceType_id %><br>
-    <%= f.text_field :serviceType_id %>
+
+  
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :requestDate, "Fecha Requerimiento: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.date_select :requestDate, class:"form-control", placeholder:"Fecha requerimiento" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+
+
+    <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :serviceType_id, "Lugar de serivico: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.text_field :serviceType_id, class:"form-control", placeholder:"Lugar de servicio" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :proposeDate %><br>
-    <%= f.date_select :proposeDate %>
+
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :address, "Direccion: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.text_field :address, class:"form-control", placeholder:"Direccion" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :proposeHour %><br>
-    <%= f.time_select :proposeHour %>
+
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :proposeDate, "Fecha para servicio: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.date_select :proposeDate, class:"form-control", placeholder:"Fecha para servicio" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :isPending %><br>
-    <%= f.check_box :isPending %>
+
+  
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :proposeHour, "Hora para servicio: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.time_select :proposeHour, class:"form-control", placeholder:"Hora para servicio" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :isConfirmed %><br>
-    <%= f.check_box :isConfirmed %>
+
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :isPending, "Serivio Pendiente: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.check_box :isPending, class:"form-control", placeholder:"Serivio Pendiente" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
+  
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :isConfirmed, "Servicio realizado: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.check_box :isConfirmed, class:"form-control", placeholder:"Servicio realizado" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :vet_id %><br>
-    <%= f.text_field :vet_id %>
+ 
+ 
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :comment, "Comentarios: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.text_field :comment, class:"form-control", placeholder:"Comentarios" %>
+          </div>                            
+    </div>
   </div>
+
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :vet_id, "Veterinaria: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.collection_select :vet_id, Vet.all, :id, :name, :prompt => true, class:"form-control", placeholder:"Veterinaria" %>
+          </div>                            
+    </div>
+  </div>
+
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Grabar" %>
   </div>
+  <br>
+    <%= link_to 'Regresar', requests_path %>
 <% end %>

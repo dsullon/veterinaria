@@ -3,16 +3,16 @@ class RequestDetailsController < ApplicationController
 
   def index
     @request_details = RequestDetail.all
-    respond_with(@request_details)
+    #respond_with(@request_details)
   end
 
   def show
-    respond_with(@request_detail)
+    #respond_with(@request_detail)
   end
 
   def new
     @request_detail = RequestDetail.new
-    respond_with(@request_detail)
+    #respond_with(@request_detail)
   end
 
   def edit
@@ -21,17 +21,17 @@ class RequestDetailsController < ApplicationController
   def create
     @request_detail = RequestDetail.new(request_detail_params)
     @request_detail.save
-    respond_with(@request_detail)
+    #respond_with(@request_detail)
   end
 
   def update
     @request_detail.update(request_detail_params)
-    respond_with(@request_detail)
+    #respond_with(@request_detail)
   end
 
   def destroy
     @request_detail.destroy
-    respond_with(@request_detail)
+    #respond_with(@request_detail)
   end
 
   private
