@@ -11,23 +11,65 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :request_id %><br>
-    <%= f.text_field :request_id %>
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+      <div class="input-group input-group-sm col-sm-9">
+        <%= f.hidden_field :user_id, :value => current_user.id, class:"form-control", placeholder:"usuario"%>
+      </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :service_id %><br>
-    <%= f.text_field :service_id %>
+
+
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :request_id, "Requerimiento: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.collection_select :request_id, Request.all, :id, :id, :prompt => true, class:"form-control", placeholder:"Requerimiento" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :pet_id %><br>
-    <%= f.text_field :pet_id %>
+
+  
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :service_id, "Servicio: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.collection_select :service_id, Service.all, :id, :name, :prompt => true, class:"form-control", placeholder:"Servicio" %>
+          </div>                            
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
+
+
+<div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :pet_id, "Mascota: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.collection_select :pet_id, Pet.all, :id, :name, :prompt => true, class:"form-control", placeholder:"Mascota" %>
+          </div>                            
+    </div>
   </div>
+
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :comment, "Comentarios: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.text_field :comment, class:"form-control", placeholder:"Comentarios" %>
+          </div>                            
+    </div>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
+    <%= link_to 'Regresar', requests_path %>
 <% end %>
