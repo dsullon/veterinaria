@@ -32,15 +32,9 @@ class RequestsController < ApplicationController
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
-  end
-
-
-
-
-
-    
-    #respond_with(@request)
-  end
+  end  
+  #respond_with(@request)
+end
 
   def update
     #@request.update(request_params)
