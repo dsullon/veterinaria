@@ -19,9 +19,10 @@
       <% @families.each do |family| %>
         <tr>
           <td><%= family.name %></td>
-          <td><%= link_to 'Mostrar', family %></td>
-          <td><%= link_to 'Editar', edit_family_path(family) %></td>
-          <td><%= link_to 'Eliminar', family, method: :delete, data: { confirm: 'Está seguro de eliminar?' } %></td>
+          <td>
+            <%= link_to 'Editar', edit_family_path(family) %> | 
+            <%= link_to 'Eliminar', family, method: :delete, data: { confirm: 'Está seguro de eliminar?' } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

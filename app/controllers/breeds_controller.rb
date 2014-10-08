@@ -29,7 +29,8 @@ class BreedsController < ApplicationController
 
     respond_to do |format|
       if @breed.save
-        format.html { redirect_to @breed, notice: 'Breed was successfully created.' }
+        format.html { redirect_to action: "index" }
+        #format.html { redirect_to @breed, notice: 'Breed was successfully created.' }
         format.json { render :show, status: :created, location: @breed }
       else
         format.html { render :new }
@@ -43,7 +44,8 @@ class BreedsController < ApplicationController
   def update
     respond_to do |format|
       if @breed.update(breed_params)
-        format.html { redirect_to @breed, notice: 'Breed was successfully updated.' }
+        format.html { redirect_to action: "index" }
+        #format.html { redirect_to @breed, notice: 'Breed was successfully updated.' }
         format.json { render :show, status: :ok, location: @breed }
       else
         format.html { render :edit }
@@ -57,7 +59,8 @@ class BreedsController < ApplicationController
   def destroy
     @breed.destroy
     respond_to do |format|
-      format.html { redirect_to breeds_url, notice: 'Breed was successfully destroyed.' }
+      format.html { redirect_to action: "index" }
+      #format.html { redirect_to breeds_url, notice: 'Breed was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -5,7 +5,7 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.where(user: current_user)
   end
 
   # GET /pets/1
@@ -29,7 +29,8 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to action: "index" }
+        #format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
@@ -43,7 +44,8 @@ class PetsController < ApplicationController
   def update
     respond_to do |format|
       if @pet.update(pet_params)
-        format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
+        format.html { redirect_to action: "index" }
+        #format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
         format.json { render :show, status: :ok, location: @pet }
       else
         format.html { render :edit }
@@ -57,7 +59,8 @@ class PetsController < ApplicationController
   def destroy
     @pet.destroy
     respond_to do |format|
-      format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
+      format.html { redirect_to action: "index" }
+      #format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +73,6 @@ class PetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
-      params.require(:pet).permit(:name, :age, :gender, :family_id, :breed_id, :otherDetails, :string)
+      params.require(:pet).permit(:name, :age, :gender, :family_id, :breed_id, :otherDetails, :user_id, :string)
     end
 end

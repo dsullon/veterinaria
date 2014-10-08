@@ -59,7 +59,8 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
     respond_to do |format|
-      format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
+      format.html { redirect_to action: "index" }
+      #format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
