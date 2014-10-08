@@ -27,7 +27,7 @@
         <%= f.label :request_id, "Requerimiento: ", class:'col-sm-3 control-label required' %>
           <div class="input-group input-group-sm col-sm-9">
             <span class="input-group-addon">*</span>
-            <%= f.collection_select :request_id, Request.all, :id, :id, :prompt => true, class:"form-control", placeholder:"Requerimiento" %>
+            <%= f.collection_select :request_id, Request.where(user: current_user), :id, :id, :prompt => true, class:"form-control", placeholder:"Requerimiento" %>
           </div>                            
     </div>
   </div>
