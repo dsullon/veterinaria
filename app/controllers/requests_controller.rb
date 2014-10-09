@@ -71,6 +71,6 @@ end
     end
 
     def request_params
-      params.require(:request).permit(:requestDate, :serviceType_id, :address, :proposeDate, :proposeHour, :isPending, :isConfirmed, :comment, :vet_id, :user_id)
+      params.require(:request).permit(:requestDate, :serviceType_id, :address, :proposeDate, :proposeHour, :isPending, :isConfirmed, :comment, :vet_id, :user_id, request_details: [:id, :service_id, :pet_id, :done, :_destroy])
     end
 end
