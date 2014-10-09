@@ -20,6 +20,11 @@ class Vets::RegistrationsController < Devise::RegistrationsController
       # not a standard action
       # deactivate code here
     end
+
+    def popup
+      # not a standard action
+      # deactivate code here
+    end
   # GET /resource/sign_up
   # def new
   #   super

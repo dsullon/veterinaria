@@ -1,4 +1,40 @@
-<%= form_for(@request) do |f| %>
+<!--Div para crear ventana emergente de login-->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button id="btnCerrar" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+      &times;</button>
+      <h4 class="modal-title">Veterinaria</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <% @vets = Vet.all %>
+          <tbody>
+            <% @vets.each do |vet| %>
+              <tr onClick="datos('<%= vet.id %>','<%= vet.name %>', '<%= vet.address %>')">
+                <td><%= vet.name %></td>
+                <td><%= vet.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        ...
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+
+<%= form_for(@request, :html => {:name => 'frmRequest'} ) do |f| %>
   <% if @request.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
@@ -111,12 +147,25 @@
   <div class="row">
     <div class="form-group col-sm-8">
         <%= f.label :vet_id, "Veterinaria: ", class:'col-sm-3 control-label required' %>
-          <div class="input-group input-group-sm col-sm-9">
-            <span class="input-group-addon">*</span>
-            <%= f.collection_select :vet_id, Vet.all, :id, :name, :prompt => true, class:"form-control", placeholder:"Veterinaria" %>
-          </div>                            
-    </div>
+        <a data-toggle="modal" href="#myModal">
+          Agregar
+        </a>  
+        <div class="input-group input-group-sm col-sm-9">
+          <span class="input-group-addon">*</span>
+          <%= text_field "request_vet", "name", class:"form-control", :disabled => true %>
+          <%= text_field "request_vet", "address", class:"form-control", :disabled => true %>
+          <%= f.hidden_field :vet_id, class:"form-control", placeholder:"Comentarios" %>
+        </div>
+    </div> 
   </div>
+  <script type="text/javascript">
+  function datos(id, nombre, address){
+    document.frmRequest.request_vet_id.value = id;
+    document.frmRequest.request_vet_name.value = nombre;
+    document.frmRequest.request_vet_address.value = address;
+    $("#btnCerrar").click()
+  }
+  </script>
 
 
 

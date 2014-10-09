@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+    $(".playSong").click(function(e){
+        e.preventDefault(); // this will prevent the browser to redirect to the href
+        // if js is disabled nothing should change and the link will work normally
+        var url = $(this).attr('href');
+        var windowName = $(this).attr('id');
+        window.open(url, windowName, "height=300,width=400");
+    });
+});
