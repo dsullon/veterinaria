@@ -154,7 +154,7 @@
           <span class="input-group-addon">*</span>
           <%= text_field "request_vet", "name", class:"form-control", :disabled => true %>
           <%= text_field "request_vet", "address", class:"form-control", :disabled => true %>
-          <%= f.hidden_field :vet_id, class:"form-control", placeholder:"Comentarios" %>
+          <%= f.text_field :vet_id, class:"form-control", placeholder:"Comentarios" %>
         </div>
     </div> 
   </div>
@@ -171,7 +171,7 @@
       </thead>
       <tbody>
         <%= f.fields_for :request_details do |item| %>      
-          <%= render "request_details_fields", :f => item %>
+          <%= render "request_detail_fields", :f => item %>
         <% end %>
       </tbody>
     </table> 

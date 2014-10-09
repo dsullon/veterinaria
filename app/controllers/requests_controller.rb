@@ -14,6 +14,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @request.build_request_detail
     #respond_with(@request)
   end
 
@@ -71,6 +72,7 @@ end
     end
 
     def request_params
-      params.require(:request).permit(:requestDate, :serviceType_id, :address, :proposeDate, :proposeHour, :isPending, :isConfirmed, :comment, :vet_id, :user_id, request_details: [:id, :service_id, :pet_id, :done, :_destroy])
+      params.require(:request).permit(:requestDate, :serviceType_id, :address, :proposeDate, :proposeHour, :isPending, :isConfirmed, :comment, :vet_id, :user_id, 
+          request_details_attributes:[:service_id, :pet_id, :comment, :_destroy])
     end
 end
