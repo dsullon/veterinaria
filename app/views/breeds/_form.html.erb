@@ -10,6 +10,8 @@
     </div>
   <% end %>
 
+
+
   <div class="row">
     <div class="form-group col-sm-8">
       <%= f.label :name, "Nombre: ", class:'col-sm-3 control-label required'  %>
@@ -19,6 +21,17 @@
       </div>                            
     </div>
   </div>
+
+  <div class="row">
+    <div class="form-group col-sm-8">
+        <%= f.label :Family_id, "Especie: ", class:'col-sm-3 control-label required' %>
+          <div class="input-group input-group-sm col-sm-9">
+            <span class="input-group-addon">*</span>
+            <%= f.collection_select :Family_id, Family.all, :id, :name, :prompt => true, class:"form-control", placeholder:"Especie" %>
+          </div>                            
+    </div>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Grabar" %>

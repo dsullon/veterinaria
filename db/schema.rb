@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008182846) do
+ActiveRecord::Schema.define(version: 20141008230144) do
 
   create_table "breeds", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "Family_id"
   end
+
+  add_index "breeds", ["Family_id"], name: "index_breeds_on_Family_id"
 
   create_table "families", force: true do |t|
     t.string   "name"
