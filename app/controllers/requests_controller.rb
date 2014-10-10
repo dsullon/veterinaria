@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
-    @request.build_request_detail
+    #@request.build_request_detail
     #respond_with(@request)
   end
 

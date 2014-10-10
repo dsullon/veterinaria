@@ -9,9 +9,9 @@
 <div class="row"> 
   <div class="col-sm-12">
 
-<table class="table table-hover">
+<table class="table table-hover" cellpadding="5" cellspacing="5" border="5" width="100%">
   <thead>
-    <tr>
+    <tr width="100%">
       <th>Fecha Requerimiento</th>
       <th>Lugar del Servicio</th>
       <th>Direccion</th>
@@ -40,7 +40,7 @@
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "Agregar Servicios", new_request_detail_path %></td>
+        
       </tr>
     <% end %>
   </tbody>
