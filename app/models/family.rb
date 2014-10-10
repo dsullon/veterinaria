@@ -1,4 +1,4 @@
 class Family < ActiveRecord::Base
 	
-	has_many :breed
+	#has_many :breeds
 end

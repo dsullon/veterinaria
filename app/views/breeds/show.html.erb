@@ -63,12 +63,17 @@
       <div class="col-md-8">
           
             
-      				<p id="notice"><%= notice %></p>
+      		<p id="notice"><%= notice %></p>
 
 					<p>
   					<strong>Nombre:</strong>
   					<%= @breed.name %>
 					</p>
+
+          <p>
+            <strong>Familia:</strong>
+            <%= @breed.family %>
+          </p>
 
 					<%= link_to 'Edit', edit_breed_path(@breed) %> |
 					<%= link_to 'Back', breeds_path %>
