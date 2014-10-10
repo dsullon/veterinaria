@@ -63,6 +63,7 @@
     </div>
   </div>
 
+<% if @user.password_required? %>
   <div class="row">
     <div class="form-group col-sm-8">
       <%= f.label :password, "Contraseña: " , class:'col-sm-3 control-label required'  %>
@@ -83,6 +84,7 @@
       </div>
     </div>
   </div>
+<% end %>
 
   <div><%= f.submit "Registrarse", class:'btn btn-default btn-sm' %></div>
 <% end %>

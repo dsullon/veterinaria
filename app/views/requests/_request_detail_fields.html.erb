@@ -1,6 +1,6 @@
  <tr class="nested-fields">
-	<td><%= f.collection_select :service_id, Service.all, :id, :name, :prompt => true, class:"form-control", placeholder:"Servicio" %></td>
-	<td><%= f.collection_select :pet_id, Pet.where(user: current_user), :id, :name, :prompt => true, class:"form-control", placeholder:"Mascota" %></td>
+	<td><%= f.collection_select :service_id, Service.all, :id, :name, :prompt => "--  Seleccione el servicio --", class:"form-control", placeholder:"Servicio" %></td>
+	<td><%= f.collection_select :pet_id, Pet.where(user: current_user), :id, :name, :prompt => "--  Seleccione su mascota --", class:"form-control", placeholder:"Mascota" %></td>
 	<td><%= link_to_remove_association "Quitar", f, :class => "btn btn-default btn-xs" %></td>
 </tr>
 

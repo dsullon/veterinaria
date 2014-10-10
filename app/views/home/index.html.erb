@@ -95,6 +95,14 @@
             Veterinaria: <%= current_vet.name %>
             <%= link_to "Cerrar sesion", destroy_vet_session_path, method: :delete %>
           <%else%>
+            <p>
+              <a href="/auth/twitter" class="auth_provider">
+                <%= image_tag "twitter-login.png", :size => "230x40", :alt => "Twitter" %></a>
+            </p>
+            <p>
+              <a href="/auth/facebook" class="auth_provider">
+                <%= image_tag "facebook-login.png", :size => "230x40", :alt => "Facebook" %></a>
+            </p>
             <p>Si eres un usuario y ya tienes cuenta <%= link_to "inicia sesion", new_user_session_path %></p>
             <p>Si eres un usuario nuevo <%= link_to "Registrate Aqui", new_user_registration_path %></p></br>
             <p>¿Eres una veterinaria? <%= link_to "inicia sesion", new_vet_session_path %></p>

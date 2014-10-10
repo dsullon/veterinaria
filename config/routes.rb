@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+match '/auth/:provider/callback' => 'authentications#create', via: [:get]
+  resources :authentications
+
   resources :request_details
 
   resources :requests

@@ -26,16 +26,6 @@
 </p>
 
 <p>
-  <strong>Pendiente:</strong>
-  <%= @request.isPending %>
-</p>
-
-<p>
-  <strong>Completado:</strong>
-  <%= @request.isConfirmed %>
-</p>
-
-<p>
   <strong>Comentario:</strong>
   <%= @request.comment %>
 </p>
@@ -46,5 +36,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<%= link_to 'Editar', edit_request_path(@request) %> |
+<%= link_to 'Regresar', requests_path %>
