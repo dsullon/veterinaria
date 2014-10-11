@@ -11,9 +11,9 @@ match '/auth/:provider/callback' => 'authentications#create', via: [:get]
      get 'vets', to: 'vets/registrations#index', as: 'vet'
      get 'vet/popup', to: 'vets/registrations#popup', as: 'vet_popup'
   end
-  devise_for :vets , controllers:{registrations:'vets/registrations'}
+  devise_for :vets , controllers:{registrations:'vets/registrations', sessions:'vets/sessions'}
 
-  devise_for :users , controllers:{registrations:'users/registrations'}
+  devise_for :users , controllers:{registrations:'users/registrations', sessions:'vets/sessions'}
   resources :pets
 
   resources :families
