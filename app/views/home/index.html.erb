@@ -14,7 +14,7 @@
       <form class="navbar-form navbar-right" role="form">
         <a id="auth-modal-button" class="btn btn-default" data-toggle="modal" data-target="#auth-modal">
           <span class="btn-account img"></span>
-            <span class="label">Ingresar / Registrarse</span>
+           <font color="black"> Ingresar / Registrarse</font>
         </a>
       </form>
     </div><!--/.navbar-collapse -->
@@ -47,7 +47,7 @@
                           <%= f.label :password, :class => 'col-sm-4 control-label required'  %>
                           <div class="controls col-sm-8">
                             <%= f.password_field :password, :class => 'form-control' %>
-                            <%= link_to "Forgot your password?", new_password_path(:user) %>
+                            <%= link_to "Olvide mi contraseña", new_password_path(:user) %>
                           </div>                          
                         </div>
 
@@ -62,7 +62,15 @@
 
                         <div class="form-group">
                           <div class="col-sm-offset-4 col-sm-8">
-                            <%= f.submit 'Sign in', :class => 'btn btn-primary btn-lg btn-block' %>
+                            <%= f.submit 'Iniciar Sesión', :class => 'btn btn-primary btn-lg btn-block' %>
+
+            <p></p>
+            <strong><p>Si eres un usuario nuevo <%= link_to "Registrese aquí", new_user_registration_path %></p></br></strong>
+            <strong><p>¿Eres una veterinaria? <%= link_to "Registrese o inicia sesión aquí", new_vet_session_path %></p>
+            </strong>
+
+
+
                           </div>
                         </div>
                         <div style="clear:both;"></div>
@@ -103,9 +111,12 @@
               <a href="/auth/facebook" class="auth_provider">
                 <%= image_tag "facebook-login.png", :size => "230x40", :alt => "Facebook" %></a>
             </p>
-            <p>Si eres un usuario y ya tienes cuenta <%= link_to "inicia sesion", new_user_session_path %></p>
-            <p>Si eres un usuario nuevo <%= link_to "Registrate Aqui", new_user_registration_path %></p></br>
-            <p>¿Eres una veterinaria? <%= link_to "inicia sesion", new_vet_session_path %></p>
+
+
+
+
+
+
           <%end%>
         </p>  
         
