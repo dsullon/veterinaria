@@ -1,1 +1,1 @@
-json.extract! @service_type, :id, :atHome, :inSite, :created_at, :updated_at
+json.extract! @service_type, :id, :atHome, :inSite, :lugar, :created_at, :updated_at

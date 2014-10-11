@@ -72,7 +72,7 @@
         <%= f.label :serviceType_id, "Lugar de serivico: ", class:'col-sm-3 control-label required' %>
           <div class="input-group input-group-sm col-sm-9">
             <span class="input-group-addon">*</span>
-            <%= f.text_field :serviceType_id, class:"form-control", placeholder:"Lugar de servicio" %>
+            <%= f.collection_select :serviceType_id, ServiceType.all, :id, :lugar, :prompt => true, class:"form-control", placeholder:"Lugar de servicio" %>
           </div>                            
     </div>
   </div>

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Lugar del servicio:</strong>
-  <%= @request.serviceType %>
+  <%= @request.serviceType.lugar %>
 </p>
 
 <p>
@@ -38,3 +38,7 @@
 
 <%= link_to 'Editar', edit_request_path(@request) %> |
 <%= link_to 'Regresar', requests_path %>
+
+
+
+
